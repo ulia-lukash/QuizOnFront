@@ -72,12 +72,15 @@
   </script>
   
   <style scoped>
+  .main{
+    max-width: 450px;
+  }
   .header {
         margin-top: 5vw;
         margin-left: 5vw;
         width: 95vw;
         color: white;
-        font-family: "Bebas";
+        font-family: Bebas;
         font-weight: 700;
         font-size: 45px;
         letter-spacing: 2px;
@@ -94,7 +97,7 @@
   .sub-header {
     padding-top: 5vw;
     width: 80vw;
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-size: 18px;
     line-height: 22px;
     font-weight: 700;
@@ -106,7 +109,7 @@
     width: 80vw;
     padding-top: 5vw;
     color: white;
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-size: 15px;
     font-weight: 400;
     line-height: 17px;

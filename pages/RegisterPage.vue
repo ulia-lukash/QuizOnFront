@@ -34,7 +34,7 @@
                         <div class = "block_text">
                             УЧЕБНАЯ ГРУППА КАПИТАНА
                         </div>
-                        <input v-model="form.group" :class="{ error: formFormatters.groupIsEmpty }"   required class = "input" type = "text" placeholder = "РК6-32М">
+                        <input v-model="form.group_name" :class="{ error: formFormatters.groupNameIsEmpty }"   required class = "input" type = "text" placeholder = "РК6-32М">
                     </div>
 
                     <div class = "block_input center">
@@ -54,13 +54,22 @@
                         <div class = "block_text">
                             КОЛИЧЕСТВО ЧЕЛОВЕК
                         </div>
-                        <input v-model="form.team_size" :class="{ error: formFormatters.teamSizeIsEmpty }"  required class = "input" type = "number" placeholder = 6>
+                        <input v-model="form.amount" :class="{ error: formFormatters.teamSizeIsEmpty }"  required class = "input" type = "text" placeholder = "6">
+                    </div>
+                    <div class = "block_input center">
+                        <div class = "block_text">
+                            ТЕЛЕГРАМ
+                        </div>
+                        <input v-model="form.tg_contact" :class="{ error: formFormatters.tgContactIsEmpty }"  required class = "input" type = "text" placeholder = "@username">
+                    </div>
+                    <div class = "block_input center">
+                        <div class = "block_text">
+                            ID КОМАНДЫ
+                        </div>
+                        <input v-model="this.form.team_id" required class = "input" type = "text" placeholder = 0002>
                     </div>
 
-                    <div class = "error_output center">
-                    </div>
-
-                    <button v-on:click="buttonClicked" type="button" class = "reg_btn">Зарегистрироваться</button>
+                    <button type="button" class = "reg_btn" v-on:click="buttonClicked" >Зарегистрироваться</button>
 
                     <div class="agreement">
                         Отправляя свои данные, вы соглашаетесь на 
@@ -76,62 +85,70 @@
 import AlertVue from '../components/AlertVue.vue';
 
 export default {
-  components: { AlertVue },
     name: 'RegisterPage',
+    components: { AlertVue },
     data() {
       return {
         formFormatters: {
             captainNameIsEmpty: false,
-            groupIsEmpty: false,
+            groupNameIsEmpty: false,
             phoneIsEmpty: false,
             teamNameIsEmpty: false,
             teamSizeIsEmpty: false,
+            tgContactIsEmpty: false,
         },
         showAlert: false,
         alertText: "",
         alertHeader: "",
         form: {
-            // userId: userId,
-          captain_name: "",
-          group: "",
-          phone: "",
-          team_name: "",
-          team_size: null,
+            tg_contact: "",
+            team_id: null, 
+            captain_name: "",
+            group_name: "",
+            phone: "",
+            team_name: "",
+            amount: null,
         },
       };
     },
     methods: {
         
         buttonClicked() {
-
-            if (this.form.captain_name == '') {
+            
+            
+            if (this.form.captain_name === '') {
                 this.formFormatters.captainNameIsEmpty = true
             } else {
                 this.formFormatters.captainNameIsEmpty = false
             }
-            if (this.form.group == '') {
-                this.formFormatters.groupIsEmpty = true
+            if (this.form.group_name === '') {
+                this.formFormatters.groupNameIsEmpty = true
             } else {
-                this.formFormatters.groupIsEmpty = false
+                this.formFormatters.groupNameIsEmpty = false
             }
-            if (this.form.phone == '') {
+            if (this.form.phone === '') {
                 this.formFormatters.phoneIsEmpty = true
             } else {
                 this.formFormatters.phoneIsEmpty = false
             }
-            if (this.form.team_name == '') {
+            if (this.form.team_name === '') {
                 this.formFormatters.teamNameIsEmpty = true
             } else {
                 this.formFormatters.teamNameIsEmpty = false
             }
-            if (this.form.team_size == null || this.form.team_size <= 1 ) {
+            if (this.form.tg_contact ==='') {
+                this.formFormatters.tgContactIsEmpty = true
+            } else {
+                this.formFormatters.tgContactIsEmpty = false
+            }
+            if (this.form.amount == null || this.form.amount <= 1 ) {
                 this.formFormatters.teamSizeIsEmpty = true
             } else {
                 this.formFormatters.teamSizeIsEmpty = false
             }
 
-            if (this.formFormatters.captainNameIsEmpty == false &&
-            this.formFormatters.groupIsEmpty == false && this.formFormatters.phoneIsEmpty == false && this.formFormatters.teamNameIsEmpty == false && this.formFormatters.teamSizeIsEmpty == false) {
+            if (this.formFormatters.captainNameIsEmpty === false &&
+            this.formFormatters.groupNameIsEmpty === false && this.formFormatters.phoneIsEmpty === false && this.formFormatters.teamNameIsEmpty === false && this.formFormatters.teamSizeIsEmpty === false && this.formFormatters.tgContactIsEmpty === false) {
                 this.postData("https://www.quiz-on.ru/api/register", this.form).then((response) => {
                 if (response.status !== 200) {
                     this.showAlert = true;
@@ -141,16 +158,18 @@ export default {
                     this.showAlert = true;
                     this.alertHeader = "Поздравляем!"
                     this.alertText = "ВЫ УСПЕШНО ЗАРЕГИСТРИРОВАНЫ"
+                    this.form = {
+                    tg_contact: "",
+                    team_id: null,
+                    captain_name: "",
+                    group_name: "",
+                    phone: "",
+                    team_name: "",
+                    amount: null,
+            }
                 }
             });
-            this.form = {
-                // userId: userId,
-                captain_name: "",
-                group: "",
-                phone: "",
-                team_name: "",
-                team_size: null,
-            }
+            
             } else {
                 this.showAlert = true
                 this.alertHeader = 'Пожалуйста,'
@@ -190,10 +209,12 @@ export default {
 <style scoped>
 
 .main {
+    max-width: 450px;
     margin-top: 30px;
 }
 .form {
     width: 90vw;
+    max-width: 405px;
     background-color: #0F1A2E;
     border-radius: 21px;
     margin: auto;
@@ -207,26 +228,29 @@ export default {
     padding-top: 17px;
     box-sizing: border-box;
     font-size: 19px;
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 700;
     color: white;
     width: 80vw;
+    max-width: 360px;
 }
 
 .game_num {
     padding-top: 17px;
     box-sizing: border-box;
     font-size: 21px;
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 700;
     color: #CBA262;
     width: fit-content;
     width: 80vw;
+    max-width: 360px;
 }
 
 .block_input {
     margin-top: 11px;
     width: 80vw;
+    max-width: 360px;
     height: 51px;
 }
 .reg_btn {
@@ -234,17 +258,18 @@ export default {
     background: rgba(10, 18, 33, 0.5);
     border: 1.33428px solid #CBA262;
     border-radius: 17.3457px;
-
     width: 80vw;
-    height: 25px;
-
+    max-width: 360px;
+    height: 35px;
     font-family: Montserrat;
     font-weight: 700;
+    font-size: 17px;
     color: #FFFFFF;
 }
 
 .btn_container {
     width: 80vw;
+    max-width: 360px;
     font-size: 12px;
     padding-bottom: 30px;
 }
@@ -252,7 +277,7 @@ export default {
 .error_output {
     margin-top: 12px;
     width: 80vw;
-    max-width: 80vw;
+    max-width: 360px;
     font-family: Montserrat;
     font-weight: 400;
     overflow-wrap: break-word;
@@ -279,6 +304,7 @@ export default {
     margin-top: 6px;
     box-sizing: border-box;
     width: 100%;
+    max-width: 360px;
     height: 32px;
     border-radius: 12px;
     border-width: 2px;
@@ -291,6 +317,7 @@ export default {
     display: flex;
     margin-top: 11px;
     width: 80vw;
+    max-width: 360px;
 }
 
 .info_clock {

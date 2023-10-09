@@ -7,19 +7,24 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import FooterVue from '~/components/FooterVue.vue'
-import HeaderVue from '~/components/HeaderVue.vue'
 import MainPage from './mainPage.vue'
 
 export default Vue.extend({
-  components: { FooterVue, HeaderVue, MainPage },
+  components: { MainPage },
   name: 'IndexPage',
+  data() {
+    return {
+      
+    }
+  }
 })
 </script>
 
 <style>
 
 .main {
-    background-color: #030B18;
+  max-width: 450px;
+  background-color: #030B18;
+  margin: 0 auto;
 }
 </style>

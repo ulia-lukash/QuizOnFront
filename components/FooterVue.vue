@@ -10,7 +10,7 @@
       <br>
       <nuxt-link class="link" to="/ratingPage">РЕЙТИНГ</nuxt-link>
       <br>
-      <nuxt-link class="link" to="/contactsPage">КОНТАКТЫ</nuxt-link>
+      <nuxt-link class="link" to="/participantsPage">УЧАСТНИКИ</nuxt-link>
     </div>
     <div class="sm-logos">
       <a href="https://vk.com/quizonmsk">
@@ -37,13 +37,14 @@ export default {
 
 <style scoped>
 .main {
+  max-width: 450px;
   margin-top: 25px;
 }
 .logo-pic {
   text-align: center;
 }
 .navigation{
-  font-family: "Montserrat";
+  font-family: Montserrat;
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
@@ -58,19 +59,19 @@ export default {
   color: #CAC8B4;
 }
 .sm-logos {
-  width: 9.5vw;
+  width: 9.5%;
   margin: 0 auto;
 }
 
 .divider {
-  width: 84vw;
+  width: 84%;
   border-top: 2px solid #ffffff50;
 }
 
 .copyright {
   padding-top: 13px;
   width: 102px;
-  font-family: "Montserrat";
+  font-family: Montserrat;
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
@@ -82,7 +83,7 @@ export default {
 .user-agreement {
   padding-top: 13px;
   padding-bottom: 13px;
-  font-family: "Montserrat";
+  font-family: Montserrat;
   font-size: 10px;
   font-weight: 700;
   line-height: 12px;

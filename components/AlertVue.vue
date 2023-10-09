@@ -23,18 +23,18 @@ export default {
 
 <style scoped>
 .main {
+    max-width: 382.5px;
     width: 85vw;
+    max-height: 225px;
     height: 50vw;
-    max-width: 85vw;
-    max-height: 50vw;
     margin: 0 auto;
     background-color: #CBA262;
     border-radius: 30px;
     border: 2px solid #CBA262;
-
     margin: auto;
     display: block;
-    position: relative;
+    position: fixed;
+    top: 30vh;
 
 }
 .inner-rect {
@@ -44,27 +44,30 @@ export default {
     height: 75%;
     position: absolute;
     margin-left: 1%;
-    top: 12vw;
+    top: 24%;
+    
 }
 h2 {
     height: 10vw;
+    max-height: 45px;
     width: 80vw;
+    max-width: 360px;
     color: white;
-    font-family: "Bebas Neue";
+    font-family: Bebas;
     font-weight: 700;
     font-size: 30px;
     line-height: 20px;
     letter-spacing: 0em;
     text-align: center;
     color: black;
-    text-align: center;
 }
 
 p {
     width: 80vw;
-    padding-top: 5vw;
+    max-width: 360px;
+    padding-top: 22.5px;
     color: white;
-    font-family: "Montserrat";
+    font-family: Montserrat;
     font-weight: 700;
     font-size: 15px;
     line-height: 18px;
@@ -80,7 +83,6 @@ p {
     border-color: #CBA262;
     width: 66%;
     height: 35px;
-
     font-family: Bebas;
     font-weight: 700;
     text-align: center;
@@ -89,9 +91,8 @@ p {
     line-height: 35px;
     letter-spacing: 0em;
     margin: auto;
-
     position: absolute;
     margin-left: 17%;
-    top: 23vw;
+    top: 67%;
 }
 </style>

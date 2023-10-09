@@ -34,7 +34,9 @@ export default {
 </script>
 
 <style scoped>
-
+.main{
+  max-width: 450px;
+}
 .header {
   padding-top: 5vh;
   padding-bottom: 3vh;
@@ -49,6 +51,7 @@ export default {
 .btn {
   display: inline-block;
   width: 45vw;
+  max-width: 202.5px;
   height: 36px;
   border: 2px solid #CBA262;
   border-radius: 18px;
@@ -68,9 +71,10 @@ export default {
 }
 .buttons {
   width: 96vw;
+  max-width: 432px;
   margin: 0 auto;
 }
 .right {
-  margin-left: 5vw;
+  margin-left: 5%;
 }
 </style>

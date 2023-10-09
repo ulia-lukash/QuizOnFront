@@ -7,9 +7,12 @@
     <div class="logo-img">
       <img src="../assets/images/Logo-circle.svg" alt="">
     </div>
-    <button>
-      <nuxt-link class="link" to="/RegisterPage">ИГРАТЬ</nuxt-link>
-      </button>
+    <div class="play-button">
+      <nuxt-link class="link" to="/RegisterPage">
+      <button>ИГРАТЬ</button>
+    </nuxt-link>
+    </div>
+    
   </div>
   <div class="frame second">
     <h3>А МОЖНО ПО ПОДРОБНЕЕ?</h3>
@@ -23,12 +26,7 @@
       <p>В течение игры вам предстоит отвечать на вопросы из разных областей. Все они призваны задействовать вашу эрудицию, логику, внимательность и скорость мышления.</p>
     </div>
   </div>
-  <div class="frame third">
-    <h3>А МОЖНО ПО ПОДРОБНЕЕ?</h3>
-    <h1>В ИГРЕ ВАС ЖДЕТ</h1>
-    <h1 class="hcolor" style="margin-top: -2vh">7 РАУНДОВ:</h1>
-    <div class="divider"></div>
-  </div>
+
   </div>
   
 </template>
@@ -40,6 +38,9 @@ export default {
 </script>
 
 <style scoped>
+.main{
+  max-width: 450px;
+}
 .link {
   text-decoration: none;
   color: white;
@@ -56,9 +57,7 @@ export default {
 .second {
   background: radial-gradient(67.19% 57.35% at 78.13% 25.9%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.04) 25.74%, rgba(15, 26, 46, 0.64) 48.58%, #0F1A2E 100%);
 }
-.third {
-  background: radial-gradient(273.27% 132.49% at 40.78% 65.16%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.04) 25.74%, rgba(15, 26, 46, 0.64) 53.56%, #0F1A2E 85.35%);
-}
+
 h3 {
   margin-top: 25px;
   margin-left: 25px;
@@ -101,11 +100,11 @@ h1 {
 }
 button {
   margin-top: 9vh;
-  margin-left: 22vw;
-  margin-right: 22vw;
   margin-bottom: 5vh;
   width: 52vw;
+  max-width: 234px;
   height: 17vw;
+  max-height: 76.5px;
   border: 2px solid #CBA262;
   border-radius: 17vw;
   background-color: #030B18;
@@ -117,7 +116,11 @@ button {
   text-align: center;
   color: white;
 }
-
+.play-button{
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
 p {
   font-family: Montserrat;
   font-size: 18px;
