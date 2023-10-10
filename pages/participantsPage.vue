@@ -62,10 +62,14 @@ export default {
             if (data.length > 0) {
               let temp = "";
                 for (const itemData of data) {
+                  let teamId = ""
+                  if (itemData.team_id) { 
+                    teamId = itemData.team_id 
+                  }
                   temp += "<tr style='height: 70px; border: solid; border-width: 0.2px 0; border-color: rgba(255, 255, 255, 0.5);'>";
                   temp += "<td style='padding: 10px;'>" + itemData.team_name + "</td>";
                   temp += "<td style='padding: 10px;'>" + itemData.tg_contact + "</td>";
-                  temp += "<td style='padding: 10px;'>" + itemData.team_id + "</td>";
+                  temp += "<td style='padding: 10px;'>" + teamId + "</td>";
                   temp += "<td style='padding: 10px;'>" + itemData.captain_name + "</td>";
                   temp += "<td style='padding: 10px;'>" + itemData.group_name + "</td>";
                   temp += "<td style='padding: 10px;'>" + itemData.phone + "</td>";
@@ -104,6 +108,7 @@ table {
   background: #0F1A2E;
   border-radius: 15px;
   border-collapse: collapse;
+  margin: 0 auto;
 }
 th{
   font-family: Montserrat;

@@ -1,7 +1,10 @@
 <template>
-  <div class="main">
+  <div>
+    <div class="main">
     <main-page />
   </div>
+  </div>
+  
   
 </template>
 
@@ -14,8 +17,11 @@ export default Vue.extend({
   name: 'IndexPage',
   data() {
     return {
-      
+      width: 0
     }
+  },
+  beforeMount() {
+    this.width = window.innerWidth
   }
 })
 </script>

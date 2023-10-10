@@ -1,9 +1,11 @@
 <template>
   <div class="main">
     <div class="form center">
+
         <div v-if="showAlert">
-            <alert-vue @dismissAlert="showAlert=false" :alertText=this.alertText :alertHeader=this.alertHeader  />
+            <alert-vue @dismissAlert="showAlert=false" :alertText=this.alertText :alertHeader=this.alertHeader />
         </div>
+
                 <div class = "header center">
                     РЕГИСТРАЦИЯ НА ИГРУ
                 </div>

@@ -11,7 +11,14 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      width: 0
+    }
+  },
+  beforeMount() {
+    this.width = window.innerWidth
+  }
 }
 </script>
 

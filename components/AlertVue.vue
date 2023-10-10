@@ -23,19 +23,16 @@ export default {
 
 <style scoped>
 .main {
-    /* width: 85%; */
-    width: 330px;
+    width: 360px;
+    max-width: 360px;
     height: 190px;
     max-height: 225px;
     margin: 0 auto;
     background-color: #CBA262;
     border-radius: 30px;
     border: 2px solid #CBA262;
-    margin: auto;
-    display: block;
     position: fixed;
-    top: 30vh;
-
+    top: 25vh;
 }
 .inner-rect {
     background-color: #0F1A2E;
