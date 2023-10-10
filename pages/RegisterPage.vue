@@ -172,8 +172,8 @@ export default {
             
             } else {
                 this.showAlert = true
-                this.alertHeader = 'Пожалуйста,'
-                this.alertText = "ЗАПОЛНИТЕ ВСЕ ПОЛЯ ФОРМЫ!"
+                this.alertHeader = 'Пожалуйста'
+                this.alertText = "ЗАПОЛНИТЕ ВСЕ ПОЛЯ ФОРМЫ"
             }
             
             },

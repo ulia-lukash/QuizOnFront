@@ -23,10 +23,10 @@ export default {
 
 <style scoped>
 .main {
-    max-width: 382.5px;
-    width: 85vw;
+    /* width: 85%; */
+    width: 330px;
+    height: 190px;
     max-height: 225px;
-    height: 50vw;
     margin: 0 auto;
     background-color: #CBA262;
     border-radius: 30px;
@@ -45,12 +45,13 @@ export default {
     position: absolute;
     margin-left: 1%;
     top: 24%;
+    text-align: center;
     
 }
 h2 {
     height: 10vw;
     max-height: 45px;
-    width: 80vw;
+    width: 100%;
     max-width: 360px;
     color: white;
     font-family: Bebas;
@@ -63,7 +64,7 @@ h2 {
 }
 
 p {
-    width: 80vw;
+    width: 100%;
     max-width: 360px;
     padding-top: 22.5px;
     color: white;

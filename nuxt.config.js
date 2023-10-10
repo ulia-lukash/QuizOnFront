@@ -6,7 +6,7 @@ export default {
     htmlAttrs: {
       lang: 'en',
     },
-    
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -16,7 +16,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
     script: [
-      { src: 'https://telegram.org/js/telegram-web-app.js', defer: true}
+      { src: 'https://telegram.org/js/telegram-web-app.js', defer: true }
     ]
   },
 

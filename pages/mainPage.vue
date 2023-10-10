@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+    <!-- <div v-if="$device.isDesktop">
+      <h1>AAAAAAAAAAAAAAAA</h1>
+    </div> -->
     <div class="frame first">
     <!-- Здесь задним фоном используются какие-то переменные картинки... -->
     <h3>ЧТО ЭТО ТАКОЕ?</h3>
@@ -32,6 +35,8 @@
 </template>
 
 <script>
+
+
 export default {
 
 }
