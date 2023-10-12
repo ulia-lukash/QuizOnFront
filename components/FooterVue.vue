@@ -1,21 +1,18 @@
 <template>
   <main class="main">
     <div class="logo-pic">
-      <img src="../assets/images/logo.svg" alt="">
+      <img src="../assets/images/new-logo.png" alt="" style="width: 90px">
     </div>
-    <div class="navigation">
-      <nuxt-link class="link" to="/mainPage">ГЛАВНАЯ</nuxt-link>
-      <br>
-      <nuxt-link class="link" to="/scheduleVue">КАЛЕНДАРЬ ИГР</nuxt-link>
-      <br>
-      <nuxt-link class="link" to="/ratingPage">РЕЙТИНГ</nuxt-link>
-      <br>
-      <nuxt-link class="link" to="/participantsPage">УЧАСТНИКИ</nuxt-link>
-    </div>
-    <div class="sm-logos">
-      <a href="https://vk.com/quizonmsk">
-        <img src="../assets/images/vk-logo.svg" alt="">
+    <div class="sm-logos" style="margin: 0 auto">
+      <div>
+        <a href="https://vk.com/quizonmsk"  class="logo">
+        <img src="../assets/images/vk-logo.svg" alt="" style="height: 20px; padding-bottom: 5px">
       </a>
+      <div style="width: 30px; display: inline-block"></div>
+      <a href="https://t.me/quizonmsk"  class="logo">
+        <img src="../assets/images/tg-logo.svg" alt="" style="width: 31px;">
+      </a>
+      </div>
       
     </div>
     <hr class="divider">
@@ -36,15 +33,20 @@ export default {
 </script>
 
 <style scoped>
+
+.logo{
+  display: inline-block;
+  width: 31px;
+}
 .main {
   max-width: 450px;
-  margin-top: 25px;
 }
 .logo-pic {
   text-align: center;
+  padding-top: 3vh;
 }
 .navigation{
-  font-family: Montserrat;
+  font-family: ProductSans;
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
@@ -56,11 +58,20 @@ export default {
 .link {
   display: inline-block;
   text-decoration: none; 
-  color: #CAC8B4;
+  text-align: center;
+  font-family: ProductSans;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #C8C6B2;
+  width: 166px;
 }
 .sm-logos {
-  width: 9.5%;
-  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  padding-top: 3vh;
 }
 
 .divider {
@@ -70,27 +81,19 @@ export default {
 
 .copyright {
   padding-top: 13px;
-  width: 102px;
-  font-family: Montserrat;
+  width: 100%;
+  font-family: ProductSans;
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;
   letter-spacing: 0px;
-  text-align: left;
+  text-align: center;
   color:#ffffff50;
-  margin: auto;
 }
 .user-agreement {
-  padding-top: 13px;
+  padding-top: 15px;
   padding-bottom: 13px;
-  font-family: Montserrat;
-  font-size: 10px;
-  font-weight: 700;
-  line-height: 12px;
-  letter-spacing: 0em;
+  width: 100%;
   text-align: center;
-  color: #C7C6B2;
-  width: 166px;
-  margin: auto;
 }
 </style>

@@ -1,7 +1,10 @@
 <template>
   <div class="main">
     <div class="logo-image">
+      <nuxt-link to="/mainPage">
         <img src="../assets/images/header-logo.svg" alt="">
+      </nuxt-link>
+        
     </div>
     <!-- <div class="menu-icon">
       <img src="../assets/images/menu-icon.svg" alt="">

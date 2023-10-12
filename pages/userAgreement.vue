@@ -72,44 +72,42 @@
   </script>
   
   <style scoped>
-  .main{
-    max-width: 450px;
-  }
+
   .header {
         margin-top: 5vw;
         margin-left: 5vw;
-        width: 95vw;
+        width: 95%;
         color: white;
-        font-family: Bebas;
+        font-family: ProductSans;
         font-weight: 700;
-        font-size: 45px;
+        font-size: 25px;
         letter-spacing: 2px;
         margin-bottom: 5vw;
 
   }
   .form {
-    width: 95vw;
-    background-color: #0F1A2E;
+    width: 95%;
+    background-color: #1F354B;
     border-radius: 21px;
-    margin: auto;
+    margin: 0 auto;
   }
 
   .sub-header {
     padding-top: 5vw;
     width: 80vw;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-size: 18px;
     line-height: 22px;
     font-weight: 700;
     text-align: left;
-    color: #CBA262;
+    color: #F4DA6A;
   }
 
   .agreement-text {
     width: 80vw;
     padding-top: 5vw;
     color: white;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-size: 15px;
     font-weight: 400;
     line-height: 17px;

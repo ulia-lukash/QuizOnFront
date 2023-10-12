@@ -11,58 +11,57 @@
                 </div>
 
                 <div class = "game_num center">
-                    КВИЗОН №1
+                    2-я игра Бауманской лиги
                 </div>
 
                 <div class = "info center">
                     <div class = "info_clock"><img src = "../assets/images/clock.svg" ></div>
-                    <div class = "info_text">6 июня, ВС 20:00</div>
+                    <div class = "info_text">24 октября, ВТ 19:00</div>
                 </div>
 
                 <div class = "info center">
                     <div class = "info_loc"><img src = "../assets/images/location.svg"></div>
-                    <div class = "info_text">345 аудитория</div>
+                    <div class = "info_text">345 аудитория (ГУК МГТУ им. Н.Э. Баумана)</div>
                 </div>
 
 
                 <form class = "btn_container center">
                     <div class = "block_input center">
                         <div class = "block_text">
-                            ИМЯ КАПИТАНА
+                            ИМЯ КАПИТАНА <span class="star">*</span>
                         </div>
-                        <input v-model="form.captain_name" :class="{ error: formFormatters.captainNameIsEmpty }" required class = "input" type = "text" placeholder = "Вася Пупкин">
+                        <input v-model="form.captain_name" :class="{ error: formFormatters.captainNameIsEmpty }" required class = "input" type = "text" placeholder = "Николай Эрнестович Бауман">
                     </div>
                     <div class = "block_input center">
                         <div class = "block_text">
-                            УЧЕБНАЯ ГРУППА КАПИТАНА
+                            УЧЕБНАЯ ГРУППА КАПИТАНА <span class="star">*</span>
                         </div>
-                        <input v-model="form.group_name" :class="{ error: formFormatters.groupNameIsEmpty }"   required class = "input" type = "text" placeholder = "РК6-32М">
-                    </div>
-
-                    <div class = "block_input center">
-                        <div class = "block_text">
-                            НОМЕР ТЕЛЕФОНА
-                        </div>
-                        <input v-model="form.phone" :class="{ error: formFormatters.phoneIsEmpty }"  required class = "input" type = "text"  placeholder = "88005553535">
+                        <input v-model="form.group_name" :class="{ error: formFormatters.groupNameIsEmpty }"   required class = "input" type = "text" placeholder = "СМ1-11">
                     </div>
 
                     <div class = "block_input center">
                         <div class = "block_text">
-                            НАЗВАНИЕ КОМАНДЫ
+                            НОМЕР ТЕЛЕФОНА <span class="star">*</span>
+                        </div>
+                        <input v-model="form.phone" :class="{ error: formFormatters.phoneIsEmpty }"  required class = "input" type = "text"  placeholder = "8(999)888-77-66">
+                    </div>
+                    <div class = "block_input center">
+                        <div class = "block_text">
+                            ТЕЛЕГРАМ <span class="star">*</span>
+                        </div>
+                        <input v-model="form.tg_contact" :class="{ error: formFormatters.tgContactIsEmpty }"  required class = "input" type = "text" placeholder = "@username">
+                    </div>
+                    <div class = "block_input center">
+                        <div class = "block_text">
+                            НАЗВАНИЕ КОМАНДЫ <span class="star">*</span>
                         </div>
                         <input v-model="form.team_name" :class="{ error: formFormatters.teamNameIsEmpty }"  required class = "input" type = "text" placeholder = "Ураган Донам">
                     </div>
                     <div class = "block_input center">
                         <div class = "block_text">
-                            КОЛИЧЕСТВО ЧЕЛОВЕК
+                            КОЛИЧЕСТВО ЧЕЛОВЕК <span class="star">*</span>
                         </div>
                         <input v-model="form.amount" :class="{ error: formFormatters.teamSizeIsEmpty }"  required class = "input" type = "text" placeholder = "6">
-                    </div>
-                    <div class = "block_input center">
-                        <div class = "block_text">
-                            ТЕЛЕГРАМ
-                        </div>
-                        <input v-model="form.tg_contact" :class="{ error: formFormatters.tgContactIsEmpty }"  required class = "input" type = "text" placeholder = "@username">
                     </div>
                     <div class = "block_input center">
                         <div class = "block_text">
@@ -209,7 +208,9 @@ export default {
 </script>
 
 <style scoped>
-
+.star {
+    color: #F4DA6A;
+}
 .main {
     max-width: 450px;
     margin-top: 30px;
@@ -217,7 +218,7 @@ export default {
 .form {
     width: 90vw;
     max-width: 405px;
-    background-color: #0F1A2E;
+    background-color: #1F354B;
     border-radius: 21px;
     margin: auto;
 }
@@ -229,8 +230,8 @@ export default {
 .header {
     padding-top: 17px;
     box-sizing: border-box;
-    font-size: 19px;
-    font-family: Montserrat;
+    font-size: 24px;
+    font-family: ProductSans;
     font-weight: 700;
     color: white;
     width: 80vw;
@@ -241,9 +242,9 @@ export default {
     padding-top: 17px;
     box-sizing: border-box;
     font-size: 21px;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 700;
-    color: #CBA262;
+    color: #F4DA6A;
     width: fit-content;
     width: 80vw;
     max-width: 360px;
@@ -257,13 +258,13 @@ export default {
 }
 .reg_btn {
     margin-top: 12px;
-    background: rgba(10, 18, 33, 0.5);
-    border: 1.33428px solid #CBA262;
+    background-color: #182A3E;
+    border: 1.33428px solid #F4DA6A;
     border-radius: 17.3457px;
     width: 80vw;
     max-width: 360px;
     height: 35px;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 700;
     font-size: 17px;
     color: #FFFFFF;
@@ -280,7 +281,7 @@ export default {
     margin-top: 12px;
     width: 80vw;
     max-width: 360px;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 400;
     overflow-wrap: break-word;
     color: #9F2128;
@@ -289,13 +290,13 @@ export default {
 .block_text {
     font-size: 13px;
     line-height: 15px;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 700;
     color: #FFFFFF;
 }
 
 ::placeholder {
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 400;
     font-size: 12px;
     color: #FFFFFF33;
@@ -310,7 +311,7 @@ export default {
     height: 32px;
     border-radius: 12px;
     border-width: 2px;
-    background-color: #0A1221;
+    background-color: #182A3E;
     border-color: #FFFFFF33;
     color: #FFFFFF;
 }
@@ -334,7 +335,7 @@ export default {
 
 .info_text {
     color: white;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 400;
     font-size: 12px;
     margin-left: 8px;
@@ -343,14 +344,14 @@ export default {
 }
 .agreement {
     margin-top: 20px;
-    font-family: Montserrat;
+    font-family: ProductSans;
     font-weight: 400;
     font-size: 12px;
     color: white;
 }
 
 a {
-    color:#CBA262;
+    color:#F4DA6A;
     text-decoration: none;
 }
 

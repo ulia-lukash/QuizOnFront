@@ -8,7 +8,7 @@
     <h3>ЧТО ЭТО ТАКОЕ?</h3>
     <h1>ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ ИГРА</h1>
     <div class="logo-img">
-      <img src="../assets/images/Logo-circle.svg" alt="">
+      <img src="../assets/images/new-logo.png" alt="" style="width: 270px">
     </div>
     <div class="play-button">
       <nuxt-link class="link" to="/RegisterPage">
@@ -52,7 +52,7 @@ export default {
 }
 .frame {
   margin-top: 2.5vh;
-  border: 2px solid #cba362;
+  border: 2px solid #F4DA6A;
   background: radial-gradient(295.69% 61.62% at 21.72% 28.29%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.04) 19.2%, rgba(15, 26, 46, 0.64) 58.33%, #0F1A2E 100%);
   border-radius: 18px;
 }
@@ -66,7 +66,7 @@ export default {
 h3 {
   margin-top: 25px;
   margin-left: 25px;
-  font-family: Bebas;
+  font-family: ProductSans;
   font-size: 16px;
   font-weight: 700;
   line-height: 16px;
@@ -76,12 +76,12 @@ h3 {
 }
 
 .hcolor{
-  color: #CBA262;
+  color: #F4DA6A;
 }
 
 h2 {
-  margin-left: 50px;
-  font-family: Bebas;
+  margin-left: 25px;
+  font-family: ProductSans;
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
@@ -91,8 +91,8 @@ h2 {
 }
 h1 {
   margin-left: 25px;
-  font-family: Bebas;
-  font-size: 30px;
+  font-family: ProductSans;
+  font-size: 27px;
   font-weight: 700;
   line-height: 30px;
   letter-spacing: 1px;
@@ -110,10 +110,10 @@ button {
   max-width: 234px;
   height: 17vw;
   max-height: 76.5px;
-  border: 2px solid #CBA262;
+  border: 2px solid #F4DA6A;
   border-radius: 17vw;
-  background-color: #030B18;
-  font-family: Montserrat;
+  background-color: #0F1A2E;
+  font-family: ProductSans;
   font-size: 22px;
   font-weight: 700;
   line-height: 22px;
@@ -127,14 +127,14 @@ button {
   text-align: center;
 }
 p {
-  font-family: Montserrat;
+  font-family: ProductSans;
   font-size: 18px;
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0px;
   text-align: left;
   color: white;
-  margin-left: 50px;
+  margin-left: 25px;
   margin-right: 30px;
   margin-top: -5px;
 }

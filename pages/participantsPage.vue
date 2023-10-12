@@ -96,7 +96,7 @@ export default {
 <style scoped>
 h1 {
   padding-bottom: 3vh;
-  font-family: Bebas;
+  font-family: ProductSans;
   font-size: 36px;
   font-weight: 700;
   line-height: 36px;
@@ -111,17 +111,17 @@ table {
   margin: 0 auto;
 }
 th{
-  font-family: Montserrat;
+  font-family: ProductSans;
   font-size: 15px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
-  color: #CBA262;
+  color: #E0AC59;
   padding: 10px;
 }
 tbody{
-  font-family: Montserrat;
+  font-family: ProductSans;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;

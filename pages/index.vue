@@ -30,7 +30,7 @@ export default Vue.extend({
 
 .main {
   max-width: 450px;
-  background-color: #030B18;
+  background-color: #182A3E;
   margin: 0 auto;
 }
 </style>
