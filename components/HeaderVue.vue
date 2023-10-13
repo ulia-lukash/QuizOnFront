@@ -2,7 +2,7 @@
   <div class="main">
     <div class="logo-image">
       <nuxt-link to="/mainPage">
-        <img src="../assets/images/header-logo.svg" alt="">
+        <img src="../assets/images/header-logo.png" alt="" style="height: 20px;">
       </nuxt-link>
         
     </div>

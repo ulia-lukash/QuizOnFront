@@ -1,7 +1,7 @@
 <template>
   <main class="main">
     <div class="logo-pic">
-      <img src="../assets/images/new-logo.png" alt="" style="width: 90px">
+      <img src="../assets/images/new-logo.png" alt="" style="width: 90px; margin: 0 auto">
     </div>
     <div class="sm-logos" style="margin: 0 auto">
       <div>
@@ -33,26 +33,21 @@ export default {
 </script>
 
 <style scoped>
-
+.main {
+  width: 100vw;
+  max-width: 450px;
+  text-align: center;
+}
 .logo{
   display: inline-block;
   width: 31px;
 }
-.main {
-  max-width: 450px;
-}
+
 .logo-pic {
+  width: 100vw;
+  max-width: 450px;
   text-align: center;
   padding-top: 3vh;
-}
-.navigation{
-  font-family: ProductSans;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 15px;
-  letter-spacing: 0em;
-  text-align: left;
-  padding: 30px;
 }
 
 .link {
@@ -75,8 +70,9 @@ export default {
 }
 
 .divider {
-  width: 84%;
+  width: 90%;
   border-top: 2px solid #ffffff50;
+  margin: 0 auto;
 }
 
 .copyright {
