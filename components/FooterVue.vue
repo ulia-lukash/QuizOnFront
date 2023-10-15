@@ -1,43 +1,52 @@
 <template>
   <div class="main">
     <div class="logo-pic">
-      <img src="../assets/images/new-logo.png" alt="" style="width: 90px; margin: 0 auto">
+      <img
+        src="../assets/images/new-logo.png"
+        alt=""
+        style="width: 90px; margin: 0 auto"
+      />
     </div>
     <div class="sm-logos" style="margin: 0 auto">
       <div>
-        <a href="https://vk.com/quizonmsk"  class="logo">
-        <img src="../assets/images/vk-logo.svg" alt="" style="height: 20px; padding-bottom: 5px">
-      </a>
-      <div style="width: 30px; display: inline-block"></div>
-      <a href="https://t.me/quizonmsk"  class="logo">
-        <img src="../assets/images/tg-logo.svg" alt="" style="width: 31px;">
-      </a>
+        <a href="https://vk.com/quizonmsk" class="logo">
+          <img
+            src="../assets/images/vk-logo.svg"
+            alt=""
+            style="height: 20px; padding-bottom: 5px"
+          />
+        </a>
+        <div style="width: 30px; display: inline-block"></div>
+        <a href="https://t.me/quizonmsk" class="logo">
+          <img src="../assets/images/tg-logo.svg" alt="" style="width: 31px" />
+        </a>
       </div>
-      
     </div>
-    <hr class="divider">
+    <hr class="divider" />
     <div class="copyright">© 2023 КвизON</div>
     <div class="user-agreement">
-      <nuxt-link class="link" to="/userAgreement">СОГЛАШЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</nuxt-link>
-      </div>
+      <nuxt-link class="link" to="/userAgreement"
+        >СОГЛАШЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</nuxt-link
+      >
     </div>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
-      return {
-      }
-    }
+    return {}
+  },
 }
 </script>
 
 <style scoped>
 .main {
-  width: 100%;
+  width: 100vw;
+  max-width: 450px;
   text-align: center;
 }
-.logo{
+.logo {
   display: inline-block;
   width: 31px;
 }
@@ -51,7 +60,7 @@ export default {
 
 .link {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
   text-align: center;
   font-family: ProductSans;
   font-size: 10px;
@@ -59,7 +68,7 @@ export default {
   line-height: 12px;
   letter-spacing: 0em;
   text-align: center;
-  color: #C8C6B2;
+  color: #c8c6b2;
   width: 166px;
 }
 .sm-logos {
@@ -70,7 +79,8 @@ export default {
 }
 
 .divider {
-  width: 90%;
+  width: 90vw;
+  max-width: 405px;
   border-top: 2px solid #ffffff50;
   margin: 0 auto;
 }
@@ -85,7 +95,7 @@ export default {
   line-height: 15px;
   letter-spacing: 0px;
   text-align: center;
-  color:#ffffff50;
+  color: #ffffff50;
 }
 .user-agreement {
   padding-top: 15px;

@@ -1,11 +1,9 @@
 <template>
   <div>
     <div class="main">
-    <main-page />
+      <main-page />
+    </div>
   </div>
-  </div>
-  
-  
 </template>
 
 <script lang="ts">
@@ -19,11 +17,9 @@ export default Vue.extend({
 </script>
 
 <style>
-
 .main {
   width: 100vw;
   max-width: 450px;
-  background-color: #182A3E;
-  margin: 0 auto;
+  background-color: #182a3e;
 }
 </style>

@@ -17,7 +17,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
     script: [
-      { src: 'https://telegram.org/js/telegram-web-app.js', defer: true }
+      // { src: 'https://telegram.org/js/telegram-web-app.js', defer: true }
     ]
   },
 
@@ -44,7 +44,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  // server: {
-  //   host: '0' // default: localhost
-  // }
+  server: {
+    host: '0' // default: localhost
+  }
 }
