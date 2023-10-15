@@ -1,5 +1,5 @@
 <template>
-  <main class="main">
+  <div class="main">
     <div class="logo-pic">
       <img src="../assets/images/new-logo.png" alt="" style="width: 90px; margin: 0 auto">
     </div>
@@ -20,7 +20,7 @@
     <div class="user-agreement">
       <nuxt-link class="link" to="/userAgreement">СОГЛАШЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</nuxt-link>
       </div>
-  </main>
+    </div>
 </template>
 
 <script>
@@ -34,8 +34,7 @@ export default {
 
 <style scoped>
 .main {
-  width: 100vw;
-  max-width: 450px;
+  width: 100%;
   text-align: center;
 }
 .logo{
@@ -64,7 +63,8 @@ export default {
   width: 166px;
 }
 .sm-logos {
-  width: 100%;
+  width: 100vw;
+  max-width: 450px;
   text-align: center;
   padding-top: 3vh;
 }
@@ -77,7 +77,8 @@ export default {
 
 .copyright {
   padding-top: 13px;
-  width: 100%;
+  width: 100vw;
+  max-width: 450px;
   font-family: ProductSans;
   font-size: 12px;
   font-weight: 700;
@@ -89,7 +90,8 @@ export default {
 .user-agreement {
   padding-top: 15px;
   padding-bottom: 13px;
-  width: 100%;
+  width: 100vw;
+  max-width: 450px;
   text-align: center;
 }
 </style>

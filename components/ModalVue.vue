@@ -58,6 +58,7 @@ export default {
     justify-content: center;
     align-items: center;
     font-family: ProductSans;
+    font-size: 17px;
   }
 
   .modal {
@@ -73,7 +74,7 @@ export default {
 
   .modal-header,
   .modal-footer {
-    padding: 15px;
+    padding: 20px;
     display: flex;
   }
 
@@ -93,7 +94,7 @@ export default {
 
   .modal-body {
     position: relative;
-    padding: 20px 10px;
+    padding: 20px 20px;
   }
 
   .btn-close {
@@ -113,6 +114,8 @@ export default {
     color: white;
     background: #27425C;
     border: 1px solid #27425C;
-    border-radius: 7px;
+    border-radius: 16px;
+    font-size: 20px;
+    padding: 3px;
   }
 </style>

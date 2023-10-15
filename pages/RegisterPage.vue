@@ -9,7 +9,10 @@
 </template>
 
   <template v-slot:body>
-    {{ bodyText }}
+    <p>{{bodyText}}</p>
+    <p>{{gameDate}}</p>
+    <p>{{gameLoc}}</p>
+    <p>{{seeYa}}</p>
   </template>
 
   <template v-slot:footer>
@@ -57,15 +60,15 @@
                     </div>
                     <div class = "block_input center">
                         <div class = "block_text">
-                            ТЕЛЕГРАМ <span class="star">*</span>
+                            TELEGRAM <span class="star">*</span>
                         </div>
-                        <input v-model="form.tg_contact" :class="{ error: formFormatters.tgContactIsEmpty }"  required class = "input" type = "text" placeholder = "@username">
+                        <input v-model="form.tg_contact" :class="{ error: formFormatters.tgContactIsEmpty }"  required class = "input" type = "text" placeholder = "@quizonmsk">
                     </div>
                     <div class = "block_input center">
                         <div class = "block_text">
                             НАЗВАНИЕ КОМАНДЫ <span class="star">*</span>
                         </div>
-                        <input v-model="form.team_name" :class="{ error: formFormatters.teamNameIsEmpty }"  required class = "input" type = "text" placeholder = "Ураган Донам">
+                        <input v-model="form.team_name" :class="{ error: formFormatters.teamNameIsEmpty }"  required class = "input" type = "text" placeholder = "КвизON">
                     </div>
                     <div class = "block_input center">
                         <div class = "block_text">
@@ -82,10 +85,10 @@
 
                     <button type="button" class = "reg_btn" v-on:click="buttonClicked" >Зарегистрироваться</button>
 
-                    <div class="agreement">
+                    <!-- <div class="agreement">
                         Отправляя свои данные, вы соглашаетесь на 
                         <NuxtLink to="/userAgreement"  href="" class="agreement_link"> обработку персональных данных</NuxtLink>
-                    </div>
+                    </div> -->
                 </form>
 
             </div>
@@ -101,9 +104,12 @@ export default {
     components: { ModalVue },
     data() {
       return {
-        canRegister: false,
+        canRegister: "",
         headerText: "",
         bodyText: "",
+        gameDate: "",
+        gameLoc: "",
+        seeYa: "",
         isModalVisible: false,
         formFormatters: {
             captainNameIsEmpty: false,
@@ -126,11 +132,6 @@ export default {
     },
     beforeMount() {
         this.canRegister = this.checkIfCanRegister()
-        if (this.canRegister === false) {
-            this.headerText = "Упс... 👉🏻👈🏻"
-            this.bodyText = "К сожалению, места на игру закончились. Но не стоит опускать руки раньше времени! Мы можем зарегистрировать твою команду в резерв, чтобы в случае отказа от какой-то из прошедших команд, вы могли занять их место. Хочешь зарегистрироваться в резерв?"
-            this.showModal()
-        }
     },
 
     methods: {
@@ -145,6 +146,11 @@ export default {
           const response = await fetch("https://www.quiz-on.ru/api/register-available")
           const resp = await response.json()
           const available = resp.available
+          if (available === 'reserve') {
+            this.headerText = "Упс... 👉🏻👈🏻"
+            this.bodyText = "К сожалению, места на игру закончились. Но не стоит опускать руки раньше времени! Мы можем зарегистрировать твою команду в резерв, чтобы в случае отказа от какой-то из прошедших команд, вы могли занять их место. Хочешь зарегистрироваться в резерв?"
+            this.showModal()
+          }
           return available
 
       } catch (error) {
@@ -197,23 +203,27 @@ export default {
                     this.bodyText = 'Код ответа не 200'
                     this.showModal()
                 } else {
-                    this.headerText = 'Поздравляем!'
-                    this.bodyText = 'Вы успешно зарегистрировались'
+                    this.headerText = '🤓 Поздравляем, первые задания от КвизON успешно выполнены — твоя команда зарегистрирована!'
+                    
+                    this.bodyText = 'Посмотрим, как ты справишься с другими вопросами на второй игре Бауманской лиги КвизON. Напомним, что игра пройдет:'
+                    this.gameDate = '⚡️ 24 октября, 19:00'
+                    this.gameLoc = '⚡️ 345 ауд. (ГУК)'
+                    this.seeYa = 'До встречи на игре!'
                     this.showModal()
                     this.form = {
-                    tg_contact: "",
-                    team_id: null,
-                    captain_name: "",
-                    group_name: "",
-                    phone: "",
-                    team_name: "",
-                    amount: null,
-            }
+                        tg_contact: "",
+                        team_id: null,
+                        captain_name: "",
+                        group_name: "",
+                        phone: "",
+                        team_name: "",
+                        amount: null,
+                    }
                 }
             });
             
             } else {
-                this.headerText = 'Пожалуйста'
+                this.headerText = 'Пожалуйста... 🥲'
                 this.bodyText = 'Заполните все поля формы'
                 this.showModal()
                 
@@ -264,8 +274,6 @@ export default {
     max-width: 405px;
     background-color: #1F354B;
     border-radius: 21px;
-    margin-left: 5vw;
-    margin-right: 5vw;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.383);
 }
 
@@ -303,7 +311,7 @@ export default {
     height: 51px;
 }
 .reg_btn {
-    margin-top: 12px;
+    margin-top: 20px;
     background-color: #182A3E;
     border: 1.33428px solid #F4DA6A;
     border-radius: 17.3457px;

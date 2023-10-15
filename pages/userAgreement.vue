@@ -72,7 +72,10 @@
   </script>
   
   <style scoped>
-
+.main {
+  width: 100vw;
+  max-width: 450px;
+}
   .header {
         margin-top: 5vw;
         margin-left: 5vw;
@@ -95,6 +98,7 @@
   .sub-header {
     padding-top: 5vw;
     width: 80vw;
+    max-width: 360px;
     font-family: ProductSans;
     font-size: 18px;
     line-height: 22px;
@@ -105,6 +109,7 @@
 
   .agreement-text {
     width: 80vw;
+    max-width: 360px;
     padding-top: 5vw;
     color: white;
     font-family: ProductSans;

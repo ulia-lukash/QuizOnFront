@@ -16,15 +16,14 @@ export default {
 </script>
 
 <style scoped>
-.main{
-  width: 100vw;
-  max-width: 450px;
+.main {
+  width: 100%;
 }
 .logo-image {
     display: inline-block;
     width: 19vw;
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-left: 5vw;
+    margin-top: 2vh;
 }
 /* .menu-icon {
   display: inline-block;
