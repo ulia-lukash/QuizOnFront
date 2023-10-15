@@ -2,31 +2,22 @@
   <div class="main">
     <div class="logo-image">
       <nuxt-link to="/mainPage">
-        <img src="../assets/images/header-logo.png" alt="" style="height: 20px;">
+        <img src="../assets/images/new-logo.png" alt="" style="height: 40px;">
       </nuxt-link>
         
     </div>
-    <!-- <div class="menu-icon">
-      <img src="../assets/images/menu-icon.svg" alt="">
-    </div> -->
   </div>
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      width: 0
-    }
-  },
-  beforeMount() {
-    this.width = window.innerWidth
-  }
+  
 }
 </script>
 
 <style scoped>
 .main{
+  width: 100vw;
   max-width: 450px;
 }
 .logo-image {

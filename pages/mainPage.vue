@@ -1,7 +1,6 @@
 <template>
   <div class="main">
     <div class="frame first">
-    <!-- Здесь задним фоном используются какие-то переменные картинки... -->
     <h3>ЧТО ЭТО ТАКОЕ?</h3>
     <h1>ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ ИГРА</h1>
     <div class="logo-img">
@@ -9,7 +8,7 @@
     </div>
     <div class="play-button">
       <nuxt-link class="link" to="/RegisterPage">
-      <button>ИГРАТЬ</button>
+      <button  >ИГРАТЬ</button>
     </nuxt-link>
     </div>
     
@@ -40,14 +39,15 @@
 
 <script>
 
-
 export default {
+
 
 }
 </script>
 
 <style scoped>
 .main{
+  width: 100vw;
   max-width: 450px;
 }
 .link {
@@ -55,23 +55,25 @@ export default {
   color: white;
 }
 .frame {
-  width: 90vw;
-  max-width: 405px;
+  /* width: 90vw;
+  max-width: 405px; */
   margin-top: 2.5vh;
-  border: 2px solid #F4DA6A;
-  border-radius: 18px;
+  margin-left: 5vw;
+  border: 1px solid #F4DA6A;
+  border-radius: 21px;
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.383);
 }
 .first {
    background-image: radial-gradient(150% 60% at 30.72% 40.29%, rgba(0, 0, 0, 0.274) 0%, rgba(0, 0, 0, 0.281) 15%, #182a3ebe 30.33%, #182A3E 100%), url("../assets/images/background-first.jpg");
    height: 100%;
-   width: 100%;
+   width: 90%;
    background-position: center center;
    background-size: cover;
 }
 .second {
   background-image: radial-gradient(100.19% 40.35% at 78.13% 40.9%, rgba(0, 0, 0, 0.514) 0%,  rgba(15, 26, 46, 0.64) 48.58%, #182A3E 100%), url("../assets/images/background-second.jpg");
   height: 100%;
-   width: 100%;
+   width: 90%;
    background-position: center center;
    background-size: cover;
 }
@@ -79,7 +81,7 @@ export default {
   background-image: radial-gradient(60% 90% at 40.78% 65.16%, rgba(0, 0, 0, 0.342) 0%, rgba(0, 0, 0, 0.452) 25.74%, rgba(15, 26, 46, 0.64) 53.56%, #182A3E 100%), url("../assets/images/background-third.jpg");
 
   height: 100%;
-   width: 100%;
+   width: 90%;
    background-position: center center;
    background-size: cover;
 }
@@ -165,5 +167,9 @@ color: white;
 width: 90%;
 margin-left: 25px;
 border: 1px solid white;
+}
+
+.disabled{
+  pointer-events: none
 }
 </style>

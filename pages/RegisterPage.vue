@@ -1,11 +1,21 @@
 <template>
   <div class="main">
+    <ModalVue
+  v-show="isModalVisible"
+  v-on:close="closeModal"
+>
+  <template v-slot:header>
+{{ headerText}}  
+</template>
+
+  <template v-slot:body>
+    {{ bodyText }}
+  </template>
+
+  <template v-slot:footer>
+  </template>
+</ModalVue>
     <div class="form center">
-
-        <div v-if="showAlert">
-            <alert-vue @dismissAlert="showAlert=false" :alertText=this.alertText :alertHeader=this.alertHeader />
-        </div>
-
                 <div class = "header center">
                     РЕГИСТРАЦИЯ НА ИГРУ
                 </div>
@@ -83,13 +93,18 @@
 </template>
 
 <script>
-import AlertVue from '../components/AlertVue.vue';
+import ModalVue from '../components/ModalVue.vue';
+
 
 export default {
     name: 'RegisterPage',
-    components: { AlertVue },
+    components: { ModalVue },
     data() {
       return {
+        canRegister: false,
+        headerText: "",
+        bodyText: "",
+        isModalVisible: false,
         formFormatters: {
             captainNameIsEmpty: false,
             groupNameIsEmpty: false,
@@ -98,9 +113,6 @@ export default {
             teamSizeIsEmpty: false,
             tgContactIsEmpty: false,
         },
-        showAlert: false,
-        alertText: "",
-        alertHeader: "",
         form: {
             tg_contact: "",
             team_id: null, 
@@ -112,7 +124,36 @@ export default {
         },
       };
     },
+    beforeMount() {
+        this.canRegister = this.checkIfCanRegister()
+        if (this.canRegister === false) {
+            this.headerText = "Упс... 👉🏻👈🏻"
+            this.bodyText = "К сожалению, места на игру закончились. Но не стоит опускать руки раньше времени! Мы можем зарегистрировать твою команду в резерв, чтобы в случае отказа от какой-то из прошедших команд, вы могли занять их место. Хочешь зарегистрироваться в резерв?"
+            this.showModal()
+        }
+    },
+
     methods: {
+        showModal() {
+        this.isModalVisible = true;
+      },
+      closeModal() {
+        this.isModalVisible = false;
+      },
+      async checkIfCanRegister() {
+      try {
+          const response = await fetch("https://www.quiz-on.ru/api/register-available")
+          const resp = await response.json()
+          const available = resp.available
+          return available
+
+      } catch (error) {
+          this.headerText = "Ошибка!"
+          this.bodyText = "Что-то пошло не так"
+          this.showModal()
+      }
+                
+    },
         
         buttonClicked() {
             
@@ -152,13 +193,13 @@ export default {
             this.formFormatters.groupNameIsEmpty === false && this.formFormatters.phoneIsEmpty === false && this.formFormatters.teamNameIsEmpty === false && this.formFormatters.teamSizeIsEmpty === false && this.formFormatters.tgContactIsEmpty === false) {
                 this.postData("https://www.quiz-on.ru/api/register", this.form).then((response) => {
                 if (response.status !== 200) {
-                    this.showAlert = true;
-                    this.alertHeader = "Ошибка!"
-                    this.alertText = "КОД ОТВЕТА НЕ 200"
+                    this.headerText = 'Ошибка!'
+                    this.bodyText = 'Код ответа не 200'
+                    this.showModal()
                 } else {
-                    this.showAlert = true;
-                    this.alertHeader = "Поздравляем!"
-                    this.alertText = "ВЫ УСПЕШНО ЗАРЕГИСТРИРОВАНЫ"
+                    this.headerText = 'Поздравляем!'
+                    this.bodyText = 'Вы успешно зарегистрировались'
+                    this.showModal()
                     this.form = {
                     tg_contact: "",
                     team_id: null,
@@ -172,9 +213,10 @@ export default {
             });
             
             } else {
-                this.showAlert = true
-                this.alertHeader = 'Пожалуйста'
-                this.alertText = "ЗАПОЛНИТЕ ВСЕ ПОЛЯ ФОРМЫ"
+                this.headerText = 'Пожалуйста'
+                this.bodyText = 'Заполните все поля формы'
+                this.showModal()
+                
             }
             
             },
@@ -195,13 +237,14 @@ export default {
 
                     return response;
                 } catch (error) {
-                    this.showAlert = true;
-                    this.alertHeader = "Ошибка!"
-                    this.alertText = "ЧТО-ТО ПОШЛО НЕ ТАК"
+                    this.headerText = 'Ошибка!'
+                    this.bodyText = 'Что-то пошло не так'
+                    this.showModal()
                 }
                 
             },
-    }
+    },
+
     
 }
 
@@ -212,6 +255,7 @@ export default {
     color: #F4DA6A;
 }
 .main {
+    width: 100vw;
     max-width: 450px;
     margin-top: 30px;
 }
@@ -220,7 +264,9 @@ export default {
     max-width: 405px;
     background-color: #1F354B;
     border-radius: 21px;
-    margin: auto;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.383);
 }
 
 .center {

@@ -83,7 +83,7 @@ export default {
       } catch (error) {
         this.showAlert = true;
         this.alertHeader = "Ошибка"
-        this.alertText = "ПРИ ЗАГРУЗКЕ ДАННЫХ"
+        this.alertText = "при загрузке данных"
       }
     },
     
