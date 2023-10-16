@@ -25,9 +25,8 @@
     <hr class="divider" />
     <div class="copyright">© 2023 КвизON</div>
     <div class="user-agreement">
-      <nuxt-link class="link" to="/userAgreement"
-        >СОГЛАШЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</nuxt-link
-      >
+
+      <a class="link" href="https://bmstu.ru/about/obrabotka-dannyh">СОГЛАШЕНИЕ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ</a>
     </div>
   </div>
 </template>
