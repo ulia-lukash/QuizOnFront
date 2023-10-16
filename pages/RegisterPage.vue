@@ -108,20 +108,23 @@
         <div class="block_input center">
           <div class="block_text">ID КОМАНДЫ</div>
           <input
-            v-model="this.form.team_id"
+            v-model="form.team_id"
             required
             class="input"
             type="text"
             placeholder="0002"
           />
         </div>
-        <button type="button" class="reg_btn" v-on:click="buttonClicked" >
+        <button type="button" class="reg_btn" v-on:click="buttonClicked">
           Зарегистрироваться
         </button>
         <div class="agreement">
-            Отправляя свои данные, вы соглашаетесь на&nbsp<a  href="https://bmstu.ru/about/obrabotka-dannyh" class="agreement_link">обработку персональных данных</a>
+          Отправляя свои данные, вы соглашаетесь на&nbsp<a
+            href="https://bmstu.ru/about/obrabotka-dannyh"
+            class="agreement_link"
+            >обработку персональных данных</a
+          >
         </div>
-        
       </form>
     </div>
   </div>
@@ -247,7 +250,7 @@ export default {
                 'Посмотрим, как ты справишься с другими вопросами на\u00A0второй игре Бауманской лиги КвизON. Напомним, что игра пройдет:'
               this.gameDate = '⚡️ 24 октября, 19:00'
               this.gameLoc = '⚡️ 345 ауд. (ГУК)'
-              this.seeYa = ' до\u00A0встречи на\u00A0игре!'
+              this.seeYa = 'До\u00A0встречи на\u00A0игре!'
               this.showModal()
               this.form = {
                 tg_contact: '',
@@ -301,7 +304,7 @@ export default {
   width: 100vw;
   max-width: 450px;
   padding-top: 2vh;
-  padding-bottom: 2vh
+  padding-bottom: 2vh;
 }
 .form {
   width: 90vw;
@@ -356,6 +359,7 @@ export default {
   font-weight: 700;
   font-size: 17px;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .btn_container {
