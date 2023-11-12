@@ -17,11 +17,11 @@
     <div class="form center">
       <div class="header center">РЕГИСТРАЦИЯ НА&nbspИГРУ</div>
 
-      <div class="game_num center">2-я игра Бауманской лиги</div>
+      <div class="game_num center">3-я игра Бауманской лиги</div>
 
       <div class="info center">
         <div class="info_clock"><img src="../assets/images/clock.svg" /></div>
-        <div class="info_text">24 октября, ВТ 19:00</div>
+        <div class="info_text">21 ноября, ВТ 19:00</div>
       </div>
 
       <div class="info center">
