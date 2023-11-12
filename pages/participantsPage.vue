@@ -120,13 +120,11 @@ export default {
       if (data.length > 0) {
         let temp = ''
         for (const itemData of data) {
-          let teamId = ''
-          if (itemData.team_id) {
-            teamId = itemData.team_id
-          }
-          temp += "<td style='padding: 10px;'>" + number + '</td>'
+          const teamId = itemData.team_id ?? ''
+
           temp +=
             "<tr style='height: 70px; border: solid; border-width: 0.2px 0; border-color: rgba(255, 255, 255, 0.5);'>"
+          temp += "<td style='padding: 10px;'>" + itemData.number + '</td>'
           temp += "<td style='padding: 10px;'>" + itemData.team_name + '</td>'
           temp += "<td style='padding: 10px;'>" + itemData.tg_contact + '</td>'
           temp += "<td style='padding: 10px;'>" + teamId + '</td>'
