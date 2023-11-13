@@ -21,13 +21,13 @@
         <img src="../assets/images/new-logo.png" alt="" style="width: 270px" />
       </div>
       <div v-on:click="buttonClicked" class="play-button">
-        <nuxt-link
+        <!-- <nuxt-link
           :event="disabled ? '' : 'click'"
           class="link"
-          to="/RegisterPage"
-        >
-          <button>ИГРАТЬ</button>
-        </nuxt-link>
+          to="/registration"
+        > -->
+        <button>ИГРАТЬ</button>
+        <!-- </nuxt-link> -->
       </div>
     </div>
     <div class="frame second">
@@ -88,9 +88,9 @@ export default {
       disabled: false,
     }
   },
-  beforeMount() {
-    this.checkIfCanRegister()
-  },
+  // beforeMount() {
+  //   this.checkIfCanRegister()
+  // },
   methods: {
     showModal() {
       this.isModalVisible = true
@@ -111,10 +111,23 @@ export default {
         })
         const available = response.available
         this.canRegister = response.available
-        if (available === 'closed' || available === 'not_opened_yet') {
-          this.disabled = true
-        } else {
-          this.disabled = false
+        if (available === 'closed') {
+          this.headerText = '😪 КвизOFF...'
+          this.bodyText =
+            'К сожалению, больше нет мест на\u00A0предстоящую игру. Следите за\u00A0новостями в\u00A0наших социальных сетях, чтобы точно успеть зарегистрироваться в\u00A0следующий раз'
+          this.showModal()
+        } else if (available === 'not_opened_yet') {
+          this.headerText = 'Ой 🤭'
+          this.bodyText =
+            'Очень рады, что ты хочешь попасть на\u00A0игру! Но, к\u00A0сожалению, регистрация еще закрыта.'
+          this.bodyTextTwo =
+            'Чтобы не\u00A0пропустить регистрацию на\u00A0следующую игру, следи за\u00A0анонсами в\u00A0социальных сетях – там будет вся актуальная информация.'
+          this.showModal()
+          // this.disabled = true
+        } else if (available === 'available' || available === 'reserve') {
+          this.$router.push('/registration')
+          this.$router.go('1')
+          // this.disabled = false
         }
         return available
       } catch (error) {

@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="main">
-      <main-page />
+      <mainPage />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
-import MainPage from './mainPage.vue'
+import mainPage from './main-page.vue'
 
 export default Vue.extend({
-  components: { MainPage },
+  components: { mainPage },
   name: 'IndexPage',
 })
 </script>

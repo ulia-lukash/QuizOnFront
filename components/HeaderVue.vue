@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <div class="logo-image">
-      <nuxt-link to="/mainPage">
+      <nuxt-link to="/main-page">
         <img src="../assets/images/new-logo.png" alt="" style="height: 40px" />
       </nuxt-link>
     </div>

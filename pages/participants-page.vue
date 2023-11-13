@@ -212,6 +212,7 @@ export default {
   padding-bottom: 30px;
 }
 
+
 ::placeholder {
   font-family: ProductSans;
   font-weight: 400;

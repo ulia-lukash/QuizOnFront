@@ -28,6 +28,10 @@
         <div class="info_loc"><img src="../assets/images/location.svg" /></div>
         <div class="info_text">345 аудитория (ГУК МГТУ им. Н.Э. Баумана)</div>
       </div>
+      <div class="info center">
+        <div class="info_warn"><img src="../assets/images/warning.svg" /></div>
+        <div class="info_text">Регистрируется только капитан команды</div>
+      </div>
 
       <form class="btn_container center">
         <div class="block_input center">
@@ -134,7 +138,7 @@
 import ModalVue from '../components/ModalVue.vue'
 
 export default {
-  name: 'RegisterPage',
+  name: 'registration',
   components: { ModalVue },
   data() {
     return {
@@ -434,6 +438,7 @@ export default {
   margin-top: auto;
   margin-bottom: auto;
 }
+
 .agreement {
   margin-top: 20px;
   font-family: ProductSans;
