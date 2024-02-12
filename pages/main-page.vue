@@ -1,74 +1,80 @@
 <template>
-  <div class="main">
-    <ModalVue v-show="isModalVisible" v-on:close="closeModal">
-      <template v-slot:header>
-        {{ headerText }}
-      </template>
+  <div>
+    <div class="main">
+      <ModalVue v-show="isModalVisible" v-on:close="closeModal">
+        <template v-slot:header>
+          {{ headerText }}
+        </template>
 
-      <template v-slot:body>
-        <span style="color: black">{{ bodyText }}</span>
-        <br />
-        <br />
-        <span style="color: black">{{ bodyTextTwo }}</span>
-      </template>
+        <template v-slot:body>
+          <span style="color: black">{{ bodyText }}</span>
+          <br />
+          <br />
+          <span style="color: black">{{ bodyTextTwo }}</span>
+        </template>
 
-      <template v-slot:footer> </template>
-    </ModalVue>
-    <div class="frame first">
-      <h3>ЧТО ЭТО ТАКОЕ?</h3>
-      <h1>ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ ИГРА</h1>
-      <div class="logo-img">
-        <img src="../assets/images/new-logo.png" alt="" style="width: 270px" />
-      </div>
-      <div v-on:click="buttonClicked" class="play-button">
-        <!-- <nuxt-link
+        <template v-slot:footer> </template>
+      </ModalVue>
+      <div class="frame first">
+        <h3>ЧТО ЭТО ТАКОЕ?</h3>
+        <h1>ИНТЕЛЛЕКТУАЛЬНО-РАЗВЛЕКАТЕЛЬНАЯ ИГРА</h1>
+        <div class="logo-img">
+          <img
+            src="../assets/images/new-logo.png"
+            alt=""
+            style="width: 270px"
+          />
+        </div>
+        <div v-on:click="buttonClicked" class="play-button">
+          <!-- <nuxt-link
           :event="disabled ? '' : 'click'"
           class="link"
           to="/registration"
         > -->
-        <button>ИГРАТЬ</button>
-        <!-- </nuxt-link> -->
+          <button>ИГРАТЬ</button>
+          <!-- </nuxt-link> -->
+        </div>
       </div>
-    </div>
-    <div class="frame second">
-      <h3>А МОЖНО ПОДРОБНЕЕ?</h3>
-      <h1>КОНЕЧНО!</h1>
-      <div class="text-group">
-        <h2>КВИЗ<span class="hcolor">ON —</span></h2>
-        <p>
-          это интеллектуально-развлекательная игра в формате викторины, которая
-          станет отличным вариантом для отдыха в хорошей компании
+      <div class="frame second">
+        <h3>А МОЖНО ПОДРОБНЕЕ?</h3>
+        <h1>КОНЕЧНО!</h1>
+        <div class="text-group">
+          <h2>КВИЗ<span class="hcolor">ON —</span></h2>
+          <p>
+            это интеллектуально-развлекательная игра в формате викторины,
+            которая станет отличным вариантом для отдыха в хорошей компании
+          </p>
+          <h2 class="hcolor">ЧТО НУЖНО СДЕЛАТЬ?</h2>
+          <p>
+            Собрать команду от 4 до 8 человек, зарегистрировать ее на сайте и
+            прийти в указанные время и место на игру
+          </p>
+          <h2 class="hcolor">КАК ЭТО ПРОИСХОДИТ?</h2>
+          <p>
+            Игра включает в себя несколько раундов и самые разные форматы
+            вопросов. Вместе с командой вам предстоит побороться в этой битве
+            логики, эрудиции и скорости мышления!
+          </p>
+        </div>
+      </div>
+      <div class="frame third">
+        <h3>А МОЖНО ПОДРОБНЕЕ?</h3>
+        <h1>В ИГРЕ ВАС ЖДЕТ</h1>
+        <h1 class="hcolor">7 РАУНДОВ:</h1>
+        <div class="divider"></div>
+        <p style="margin-top: 2vh">
+          <span style="font-weight: 700; font-size: 20px"
+            >Вопросы на различные темы:</span
+          >
+          от классической музыки до современных сериалов и кино, от науки до
+          бытовой культуры
         </p>
-        <h2 class="hcolor">ЧТО НУЖНО СДЕЛАТЬ?</h2>
-        <p>
-          Собрать команду от 4 до 8 человек, зарегистрировать ее на сайте и
-          прийти в указанные время и место на игру
-        </p>
-        <h2 class="hcolor">КАК ЭТО ПРОИСХОДИТ?</h2>
-        <p>
-          Игра включает в себя несколько раундов и самые разные форматы
-          вопросов. Вместе с командой вам предстоит побороться в этой битве
-          логики, эрудиции и скорости мышления!
+        <p style="margin-top: 2vh">
+          <span style="font-weight: 700; font-size: 20px">2 часа</span>
+          интеллектуального сражения за звание самых умных игроков вечера и
+          целого сезона
         </p>
       </div>
-    </div>
-    <div class="frame third">
-      <h3>А МОЖНО ПОДРОБНЕЕ?</h3>
-      <h1>В ИГРЕ ВАС ЖДЕТ</h1>
-      <h1 class="hcolor">7 РАУНДОВ:</h1>
-      <div class="divider"></div>
-      <p style="margin-top: 2vh">
-        <span style="font-weight: 700; font-size: 20px"
-          >Вопросы на различные темы:</span
-        >
-        от классической музыки до современных сериалов и кино, от науки до
-        бытовой культуры
-      </p>
-      <p style="margin-top: 2vh">
-        <span style="font-weight: 700; font-size: 20px">2 часа</span>
-        интеллектуального сражения за звание самых умных игроков вечера и целого
-        сезона
-      </p>
     </div>
   </div>
 </template>
@@ -88,9 +94,7 @@ export default {
       disabled: false,
     }
   },
-  // beforeMount() {
-  //   this.checkIfCanRegister()
-  // },
+
   methods: {
     showModal() {
       this.isModalVisible = true
