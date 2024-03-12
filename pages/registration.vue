@@ -17,11 +17,11 @@
     <div class="form center">
       <div class="header center">РЕГИСТРАЦИЯ НА&nbspИГРУ</div>
 
-      <div class="game_num center">6-я игра Бауманской лиги</div>
+      <div class="game_num center">7-я игра Бауманской лиги</div>
 
       <div class="info center">
         <div class="info_clock"><img src="../assets/images/clock.svg" /></div>
-        <div class="info_text">21 февраля, СР 19:00</div>
+        <div class="info_text">20 марта, СР 19:00</div>
       </div>
 
       <div class="info center">
@@ -259,8 +259,8 @@ export default {
                   '☃️ Поздравляем, первые задания от\u00A0КвизON успешно выполнены — твоя команда зарегистрирована!'
 
                 this.bodyText =
-                  'Посмотрим, как ты справишься с другими вопросами на\u00A0шестой игре Бауманской лиги КвизON. Напомним, что игра пройдет:'
-                this.gameDate = '⚡️21 февраля, 19:00'
+                  'Посмотрим, как ты справишься с другими вопросами на\u00A0седьмой игре Бауманской лиги КвизON. Напомним, что игра пройдет:'
+                this.gameDate = '⚡️20 марта, 19:00'
                 this.seeYa = 'До встречи на игре!'
               }
               this.showModal()
